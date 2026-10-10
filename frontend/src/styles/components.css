@@ -1,0 +1,415 @@
+/* ============================================
+   Shared Component Styles
+   ============================================ */
+
+/* ---- Button ---- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: var(--text-sm);
+  line-height: 1;
+  border-radius: var(--radius-md);
+  padding: 0.75rem 1.25rem;
+  transition: background-color var(--transition), color var(--transition),
+    border-color var(--transition), box-shadow var(--transition),
+    transform var(--transition);
+  white-space: nowrap;
+  text-decoration: none;
+}
+
+.btn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.btn-primary {
+  background: var(--color-primary);
+  color: var(--color-text-inverse);
+}
+
+.btn-primary:hover:not(:disabled) {
+  background: var(--color-primary-hover);
+  color: var(--color-text-inverse);
+}
+
+.btn-secondary {
+  background: var(--color-surface);
+  color: var(--color-text);
+  border: 1px solid var(--color-border-strong);
+}
+
+.btn-secondary:hover:not(:disabled) {
+  background: var(--color-surface-muted);
+  color: var(--color-text);
+}
+
+.btn-ghost {
+  background: transparent;
+  color: var(--color-primary);
+  padding-inline: var(--space-3);
+}
+
+.btn-ghost:hover:not(:disabled) {
+  background: var(--color-primary-light);
+}
+
+.btn-danger {
+  background: var(--color-danger);
+  color: var(--color-text-inverse);
+}
+
+.btn-sm {
+  padding: 0.5rem 0.875rem;
+  font-size: var(--text-xs);
+}
+
+.btn-lg {
+  padding: 0.95rem 1.75rem;
+  font-size: var(--text-base);
+}
+
+.btn-block {
+  width: 100%;
+}
+
+/* ---- Card ---- */
+.card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  padding: var(--space-6);
+}
+
+.card-title {
+  font-size: var(--text-lg);
+  margin-bottom: var(--space-2);
+}
+
+.card-subtitle {
+  color: var(--color-text-secondary);
+  font-size: var(--text-sm);
+}
+
+/* ---- ScoreCard ---- */
+.score-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-5);
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow var(--transition);
+}
+
+.score-card:hover {
+  box-shadow: var(--shadow-md);
+}
+
+.score-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+}
+
+.score-card-icon {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-md);
+  background: var(--color-primary-light);
+  color: var(--color-primary);
+}
+
+.score-card-title {
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: var(--color-text-secondary);
+  font-family: var(--font-body);
+}
+
+.score-card-value {
+  font-family: var(--font-display);
+  font-size: var(--text-3xl);
+  font-weight: 700;
+  line-height: 1;
+}
+
+.score-card-desc {
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+}
+
+/* ---- SkillBadge ---- */
+.skill-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  padding: 0.35rem 0.75rem;
+  border-radius: var(--radius-full);
+  font-size: var(--text-xs);
+  font-weight: 600;
+  font-family: var(--font-display);
+  line-height: 1.4;
+}
+
+.skill-badge-default {
+  background: var(--color-primary-light);
+  color: var(--color-primary-dark);
+}
+
+.skill-badge-matched {
+  background: var(--color-success-bg);
+  color: var(--color-success);
+}
+
+.skill-badge-missing {
+  background: var(--color-warning-bg);
+  color: #b45309;
+}
+
+.skill-badge-priority {
+  background: #ede9fe;
+  color: #5b21b6;
+}
+
+.skill-badge-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+/* ---- ProgressBar ---- */
+.progress-bar-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.progress-bar-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.progress-bar-label {
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: var(--color-text);
+}
+
+.progress-bar-value {
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--color-text-secondary);
+  font-family: var(--font-display);
+}
+
+.progress-bar-track {
+  height: 8px;
+  background: var(--color-surface-muted);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  border-radius: var(--radius-full);
+  background: var(--color-primary);
+  transition: width 0.4s ease;
+}
+
+.progress-bar-fill.success {
+  background: var(--color-success);
+}
+
+.progress-bar-fill.warning {
+  background: var(--color-warning);
+}
+
+.progress-bar-fill.danger {
+  background: var(--color-danger);
+}
+
+/* ---- Loading / Empty / Error states ---- */
+.state-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: var(--space-4);
+  padding: var(--space-12) var(--space-6);
+  color: var(--color-text-secondary);
+}
+
+.state-block h3 {
+  font-size: var(--text-lg);
+  color: var(--color-text);
+}
+
+.state-block p {
+  max-width: 360px;
+  font-size: var(--text-sm);
+}
+
+.state-icon {
+  display: grid;
+  place-items: center;
+  width: 56px;
+  height: 56px;
+  border-radius: var(--radius-lg);
+  background: var(--color-surface-muted);
+  color: var(--color-text-secondary);
+}
+
+.spinner {
+  width: 36px;
+  height: 36px;
+  border: 3px solid var(--color-border);
+  border-top-color: var(--color-primary);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ---- Form elements ---- */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  margin-bottom: var(--space-5);
+}
+
+.form-label {
+  font-size: var(--text-sm);
+  font-weight: 600;
+  font-family: var(--font-display);
+  color: var(--color-text);
+}
+
+.form-input,
+.form-select,
+.form-textarea {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--color-border-strong);
+  border-radius: var(--radius-md);
+  background: var(--color-surface);
+  transition: border-color var(--transition), box-shadow var(--transition);
+}
+
+.form-input:focus,
+.form-select:focus,
+.form-textarea:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px var(--color-primary-light);
+}
+
+.form-textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.form-hint {
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+}
+
+.form-error {
+  font-size: var(--text-xs);
+  color: var(--color-danger);
+}
+
+/* ---- CareerCard ---- */
+.career-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-5);
+  box-shadow: var(--shadow-sm);
+  transition: border-color var(--transition), box-shadow var(--transition);
+}
+
+.career-card:hover,
+.career-card.active {
+  border-color: var(--color-primary);
+  box-shadow: var(--shadow-md);
+}
+
+.career-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: var(--space-3);
+}
+
+.career-card-title {
+  font-size: var(--text-lg);
+}
+
+.career-card-match {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: var(--text-sm);
+  color: var(--color-primary);
+  background: var(--color-primary-light);
+  padding: 0.35rem 0.65rem;
+  border-radius: var(--radius-full);
+  white-space: nowrap;
+}
+
+.career-card-desc {
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+}
+
+.career-card-section-label {
+  font-size: var(--text-xs);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-2);
+}
+
+/* ---- InterviewQuestion ---- */
+.interview-question {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+}
+
+.interview-question-meta {
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--color-primary);
+  margin-bottom: var(--space-3);
+  font-family: var(--font-display);
+}
+
+.interview-question-text {
+  font-size: var(--text-xl);
+  font-family: var(--font-display);
+  margin-bottom: var(--space-6);
+  line-height: 1.4;
+}
